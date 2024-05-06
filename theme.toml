@@ -1,0 +1,17 @@
+name = "Hugo Editoral"
+description = "A (modular, highly tweakable) responsive one-page theme for Hugo."
+homepage = "https://html5up.net/editorial"
+
+license = "Creative Commons"
+licenselink = "https://github.com/caressofsteel/hugo-story/blob/master/LICENSE"
+
+[author]
+    name = "martintrojer"
+    homepage = "https://github.com/martintrojer"
+    repo = "https://github.com/martintrojer/hugo-editorial"
+
+# If porting an existing theme
+[original]
+    author = "HTML5UP"
+    homepage = "https://html5up.net"
+    repo = "https://html5up.net/editorial"

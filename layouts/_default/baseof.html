@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html>
+	{{ partial "head" . }}
+	<body class="is-preload">
+		<!-- Wrapper -->
+		<div id="wrapper">
+			{{- block "main" . }}{{- end }}
+		</div>
+
+		{{ partial "scripts" . }}
+
+	</body>
+</html>

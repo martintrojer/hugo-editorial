@@ -1,0 +1,16 @@
+<!-- Banner -->
+<section class="banner">
+    <div class="content">
+        <header>
+            {{ with .title }}<h1>{{ . }}</h1>{{ end }}
+            {{ with .subtitle }}<p class="major">{{ . | safeHTML }}</p>{{ end }}
+        </header>
+        {{ with .content }}<p>{{ . | safeHTML }}</p>{{ end }}
+        {{ with .button }}<ul class="actions">
+            <li><a href="{{ .link }}" class="button big">{{ .label }}</a></li>
+        </ul>{{ end }}
+    </div>
+    {{ with .image }}<span class="image object">
+        <img src="{{.}}" alt="" />
+    </span>{{end}}
+</section>
