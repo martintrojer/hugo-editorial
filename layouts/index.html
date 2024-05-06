@@ -1,10 +1,14 @@
 {{ define "main" }}
 
-	{{ partial "header" site.Data.header }}
-	{{ partial "banner" site.Data.banner }}
-	{{ partial "features" site.Data.features }}
-	{{ partial "posts" site.Data.posts }}
-	{{ partial "sidebar" site.Data.sidebar }}
-	{{ partial "footer" . }}
+<!-- Main -->
+<div id="main">
+	<div class="inner">
+		{{ partial "header" site.Data.header }}
+		{{ partial "banner" site.Data.banner }}
+		{{ partial "features" site.Data.features }}
+		{{ partial "posts" site.Data.posts }}
+	</div>
+</div>
+{{ partial "sidebar" site.Data.sidebar }}
 
 {{ end }}
