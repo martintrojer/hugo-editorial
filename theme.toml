@@ -1,9 +1,9 @@
 name = "Hugo Editoral"
 description = "A (modular, highly tweakable) responsive one-page theme for Hugo."
-homepage = "https://html5up.net/editorial"
+homepage = "https://github.com/martintrojer/hugo-editorial"
 
 license = "Creative Commons"
-licenselink = "https://github.com/caressofsteel/hugo-story/blob/master/LICENSE"
+licenselink = "https://github.com/martintrojer/hugo-editorial/blob/master/LICENSE"
 
 [author]
     name = "martintrojer"
