@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+<!-- Main -->
+<div id="main">
+	<div class="inner">
+		{{ partial "header" site.Data.header }}
+		<section>
+			<header class="main">
+				<h1>{{ .Title }}</h1>
+			</header>
+			{{ .Content }}
+		</section>
+	</div>
+</div>
+{{ partial "sidebar" site.Data.sidebar }}
+
+{{ end }}
