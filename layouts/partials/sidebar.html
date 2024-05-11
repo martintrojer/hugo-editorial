@@ -4,73 +4,64 @@
         <!-- Menu -->
             <nav id="menu">
                 <header class="major">
-                    <h2>Menu</h2>
+                    <a href="/">
+                      <div class="row 50% uniform">
+                        <div class="4u">
+                          <span class="image fit">
+                            <img src="/images/logos/bjc-png/BJC-black.png" alt="">
+                          </span>
+                        </div>
+                        <div class="6u$">
+                          <span class="image fit">
+                            <img src="/images/logos/byv-png/BYV-black.png" alt="">
+                          </span>
+                        </div>
+                      </div>
+                      <br/>
+                    </a>
                 </header>
                 <ul>
-                    <li><a href="index.html">Homepage</a></li>
-                    <li><a href="generic.html">Generic</a></li>
-                    <li><a href="elements.html">Elements</a></li>
+                    <li><a href="/about">About us</a></li>
+                    <li><a href="/listen">Listen to us</a></li>
                     <li>
-                        <span class="opener">Submenu</span>
-                        <ul>
-                            <li><a href="#">Lorem Dolor</a></li>
-                            <li><a href="#">Ipsum Adipiscing</a></li>
-                            <li><a href="#">Tempus Magna</a></li>
-                            <li><a href="#">Feugiat Veroeros</a></li>
+                      <span class="opener">Join</span>
+                      <ul>
+                        <li><a href="/join">New joiners</a></li>
+                        <li><a href="/friends">Friends of BJC and BYC</a></li>
+                        <li><a href="/matchfund">Match funding</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Etiam Dolore</a></li>
-                    <li><a href="#">Adipiscing</a></li>
                     <li>
-                        <span class="opener">Another Submenu</span>
-                        <ul>
-                            <li><a href="#">Lorem Dolor</a></li>
-                            <li><a href="#">Ipsum Adipiscing</a></li>
-                            <li><a href="#">Tempus Magna</a></li>
-                            <li><a href="#">Feugiat Veroeros</a></li>
-                        </ul>
+                      <span class="opener">Concerts</span>
+                      <ul>
+                        <li><a href="/concerts">Upcoming</a></li>
+                        <li><a href="/posts">Past</a></li>
+                      </ul>
                     </li>
-                    <li><a href="#">Maximus Erat</a></li>
-                    <li><a href="#">Sapien Mauris</a></li>
-                    <li><a href="#">Amet Lacinia</a></li>
+                    <li><a href="/newsletter">Newsletter</a></li>
+                    <li><a href="/alumni">Alumni</a></li>
+                    <li>
+                      <span class="opener">For members</span>
+                      <ul>
+                        <li><a href="/rehearsal">Rehearsal Schedule</a></li>
+                        <li><a href="/clothes">Concert Uniforms</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="/childprotect">Child Protection Policy</a></li>
                 </ul>
             </nav>
 
-        <!-- Section -->
-            <section>
-                <header class="major">
-                    <h2>Ante interdum</h2>
-                </header>
-                <div class="mini-posts">
-                    <article>
-                        <a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-                    </article>
-                    <article>
-                        <a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-                    </article>
-                    <article>
-                        <a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-                        <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-                    </article>
-                </div>
-                <ul class="actions">
-                    <li><a href="#" class="button">More</a></li>
-                </ul>
-            </section>
 
         <!-- Section -->
             <section>
                 <header class="major">
                     <h2>Get in touch</h2>
                 </header>
-                <p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+            <p>{{ .contact }}</p>
                 <ul class="contact">
-                    <li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-                    <li class="icon solid fa-phone">(000) 000-0000</li>
-                    <li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-                    Nashville, TN 00000-0000</li>
+                <li class="icon solid fa-envelope">{{ .email }}</li>
+                <li class="icon solid fa-phone">{{ .phone }}</li>
+                <li class="icon solid fa-home">{{ .address }}</li>
                 </ul>
             </section>
 
