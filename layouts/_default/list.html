@@ -12,6 +12,7 @@
             <article>
                     <a href="{{ .RelPermalink }}" class="image"><img src="{{ with $image }} {{ ($image.Fill "200x200 q100 Center").RelPermalink }} {{ end }}" alt="" /></a>
                 <h3>{{ .Params.title }}</h3>
+	        {{ with .Params.date }} <h4>{{ . | time.Format ":date_medium" }}</h4> {{ end }}
                 <p>{{ .Params.summary }}</p>
                 <ul class="actions">
                     <li><a href="{{ .RelPermalink }}" class="button">More</a></li>

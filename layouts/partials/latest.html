@@ -6,7 +6,8 @@
         <article>
             <a href="{{ .link }}" class="image"><img src="{{ with $image }} {{ ($image.Fill "200x200 q100 Center").RelPermalink }} {{ end }}" alt="" /></a>
             <h3>{{ .title }}</h3>
-            <p>{{ .content }}</p>
+	        {{ with .date }} <h4>{{ . | time.Format ":date_medium" }}</h4> {{ end }}
+            <p>{{ .summary }}</p>
             <ul class="actions">
                 <li><a href="{{ .link }}" class="button">More</a></li>
             </ul>

@@ -7,6 +7,7 @@
 		<section>
 			<header class="main">
 				<h1>{{ .Title }}</h1>
+				{{ with .Date }} <h4>{{ . | time.Format ":date_medium" }}</h4> {{ end }}
 			</header>
 			{{ .Content }}
 		</section>
