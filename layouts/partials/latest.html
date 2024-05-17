@@ -4,7 +4,7 @@
         {{ range .post }}
         {{- $image := resources.Get .thumb -}}
         <article>
-            <a href="{{ .link }}" class="image"><img src="{{ with $image }} {{ ($image.Fill "200x200 q100 Center").RelPermalink }} {{ end }}" alt="" /></a>
+            <a href="{{ .link }}" class="image"><img src="{{ with $image }} {{ ($image.Fill "200x120 q100 Center").RelPermalink }} {{ end }}" alt="" /></a>
             <h3>{{ .title }}</h3>
 	        {{ with .date }} <h4>{{ . | time.Format ":date_medium" }}</h4> {{ end }}
             <p>{{ .summary }}</p>
