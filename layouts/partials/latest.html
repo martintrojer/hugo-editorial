@@ -21,10 +21,20 @@
         <article>
             <a href="{{ .link }}" class="image">
                 {{- if $thumb1x -}}
-                  <img src="{{ $thumb1x.RelPermalink }}"
-                       {{- if $thumb2x }} srcset="{{ $thumb1x.RelPermalink }} 400w, {{ $thumb2x.RelPermalink }} 800w"{{ end -}}
-                       sizes="(max-width: 600px) 100vw, 400px"
-                       alt="" />
+                  {{- $webp1x := $image.Fill (printf "%dx%d Smart webp q85" $w1 $h1) -}}
+                  {{- $webp2x := false -}}
+                  {{- if $thumb2x -}}
+                    {{- $webp2x = $image.Fill (printf "%dx%d Smart webp q80" $w2 $h2) -}}
+                  {{- end -}}
+                  <picture>
+                    <source type="image/webp"
+                            {{- if $webp2x }} srcset="{{ $webp1x.RelPermalink }} 400w, {{ $webp2x.RelPermalink }} 800w"{{ else }} srcset="{{ $webp1x.RelPermalink }} 400w"{{ end -}}
+                            sizes="(max-width: 600px) 100vw, 400px">
+                    <img src="{{ $thumb1x.RelPermalink }}"
+                         {{- if $thumb2x }} srcset="{{ $thumb1x.RelPermalink }} 400w, {{ $thumb2x.RelPermalink }} 800w"{{ end -}}
+                         sizes="(max-width: 600px) 100vw, 400px"
+                         alt="" />
+                  </picture>
                 {{- else -}}
                   <img src="{{ $placeholder }}" alt="" />
                 {{- end -}}
