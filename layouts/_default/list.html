@@ -9,8 +9,32 @@
         <div class="posts">
         {{ range .Pages.ByDate.Reverse }}
             {{- $image := resources.Get .Params.thumb -}}
+            {{- $placeholder := "/images/placeholder-5x3.svg" -}}
+            {{- $minW := 400 -}}
+            {{- $minH := 240 -}}
+            {{- $w1 := 400 -}}
+            {{- $h1 := 240 -}}
+            {{- $w2 := 800 -}}
+            {{- $h2 := 480 -}}
+            {{- $thumb1x := false -}}
+            {{- $thumb2x := false -}}
+            {{- if and $image (ge $image.Width $minW) (ge $image.Height $minH) -}}
+              {{- $thumb1x = $image.Fill (printf "%dx%d Smart q85" $w1 $h1) -}}
+              {{- if and (ge $image.Width $w2) (ge $image.Height $h2) -}}
+                {{- $thumb2x = $image.Fill (printf "%dx%d Smart q80" $w2 $h2) -}}
+              {{- end -}}
+            {{- end -}}
             <article>
-                    <a href="{{ .RelPermalink }}" class="image"><img src="{{ with $image }} {{ ($image.Fill "200x120 q100 Center").RelPermalink }} {{ end }}" alt="" /></a>
+                    <a href="{{ .RelPermalink }}" class="image">
+                        {{- if $thumb1x -}}
+                          <img src="{{ $thumb1x.RelPermalink }}"
+                               {{- if $thumb2x }} srcset="{{ $thumb1x.RelPermalink }} 400w, {{ $thumb2x.RelPermalink }} 800w"{{ end -}}
+                               sizes="(max-width: 600px) 100vw, 400px"
+                               alt="" />
+                        {{- else -}}
+                          <img src="{{ $placeholder }}" alt="" />
+                        {{- end -}}
+                    </a>
                 <h3>{{ .Params.title }}</h3>
 	        {{ with .Params.date }} <h4>{{ . | time.Format ":date_medium" }}</h4> {{ end }}
                 <p>{{ .Params.summary }}</p>
