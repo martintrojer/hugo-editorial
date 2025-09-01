@@ -2,9 +2,11 @@
 
 // Vars.
 
-	/// Breakpoints.
-	/// @var {list}
-	$breakpoints: () !global;
+/// Breakpoints.
+/// @var {list}
+// Predeclare to avoid !global creating a new var (Dart Sass deprecation)
+$breakpoints: null;
+$breakpoints: () !global;
 
 	/// Vendor prefixes.
 	/// @var {list}
