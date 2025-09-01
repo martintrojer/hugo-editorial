@@ -10,35 +10,35 @@
 	);
 
 // Size.
-	$size: (
-		border-radius:		0.375em,
-		element-height:		2.75em,
-		element-margin:		2em,
-		sidebar-width:		26em,
-		sidebar-width-alt:	24em,
-		gutter:				3em
-	);
+    $size: (
+        border-radius:		0.5em,
+        element-height:		2.75em,
+        element-margin:		2.25em,
+        sidebar-width:		26em,
+        sidebar-width-alt:	24em,
+        gutter:				3em
+    );
 
 // Font.
-	$font: (
-		family:				('Open Sans', sans-serif),
-		family-heading:		('Roboto Slab', serif),
-		family-fixed:		('Courier New', monospace),
-		weight:				400,
-		weight-bold:		600,
-		weight-heading:		700,
-		weight-heading-alt:	400,
-		kerning-heading:	0.075em
-	);
+    $font: (
+        family:				(system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, 'Noto Sans', 'Liberation Sans', sans-serif),
+        family-heading:		system-ui,
+        family-fixed:		('Courier New', monospace),
+        weight:				400,
+        weight-bold:		600,
+        weight-heading:		700,
+        weight-heading-alt:	600,
+        kerning-heading:	0.06em
+    );
 
 // Palette.
-	$palette: (
-		bg:					#ffffff,
-		bg-alt:				#f5f6f7,
-		fg:					#7f888f,
-		fg-bold:			#3d4449,
-		fg-light:			#9fa3a6,
-		border:				rgba(210,215,217,0.75),
-		border-bg:			transparentize(#e6ebed, 0.75),
-		accent:				#44bfec
-	);
+    $palette: (
+        bg:					#ffffff,
+        bg-alt:				#f6f7f9,
+        fg:					#596168,
+        fg-bold:			#1f2937,
+        fg-light:			#9aa3ab,
+        border:				rgba(210,215,217,0.6),
+        border-bg:			transparentize(#e6ebed, 0.8),
+        accent:				#44bfec
+    );
