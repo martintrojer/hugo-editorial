@@ -25,32 +25,31 @@
               {{- end -}}
             {{- end -}}
             <article>
-                    <a href="{{ .RelPermalink }}" class="image">
-                        {{- if $thumb1x -}}
-                          {{- $webp1x := $image.Fill (printf "%dx%d Smart webp q85" $w1 $h1) -}}
-                          {{- $webp2x := false -}}
-                          {{- if $thumb2x -}}
-                            {{- $webp2x = $image.Fill (printf "%dx%d Smart webp q80" $w2 $h2) -}}
-                          {{- end -}}
-                          <picture>
-                            <source type="image/webp"
-                                    {{- if $webp2x }} srcset="{{ $webp1x.RelPermalink }} 400w, {{ $webp2x.RelPermalink }} 800w"{{ else }} srcset="{{ $webp1x.RelPermalink }} 400w"{{ end -}}
-                                    sizes="(max-width: 600px) 100vw, 400px">
-                            <img src="{{ $thumb1x.RelPermalink }}"
-                                 {{- if $thumb2x }} srcset="{{ $thumb1x.RelPermalink }} 400w, {{ $thumb2x.RelPermalink }} 800w"{{ end -}}
-                                 sizes="(max-width: 600px) 100vw, 400px"
-                                 alt="" />
-                          </picture>
-                        {{- else -}}
-                          <img src="{{ $placeholder }}" alt="" />
-                        {{- end -}}
+                    <a href="{{ .RelPermalink }}" class="card-link">
+                        <span class="image">
+                            {{- if $thumb1x -}}
+                              {{- $webp1x := $image.Fill (printf "%dx%d Smart webp q85" $w1 $h1) -}}
+                              {{- $webp2x := false -}}
+                              {{- if $thumb2x -}}
+                                {{- $webp2x = $image.Fill (printf "%dx%d Smart webp q80" $w2 $h2) -}}
+                              {{- end -}}
+                              <picture>
+                                <source type="image/webp"
+                                        {{- if $webp2x }} srcset="{{ $webp1x.RelPermalink }} 400w, {{ $webp2x.RelPermalink }} 800w"{{ else }} srcset="{{ $webp1x.RelPermalink }} 400w"{{ end -}}
+                                        sizes="(max-width: 600px) 100vw, 400px">
+                                <img src="{{ $thumb1x.RelPermalink }}"
+                                     {{- if $thumb2x }} srcset="{{ $thumb1x.RelPermalink }} 400w, {{ $thumb2x.RelPermalink }} 800w"{{ end -}}
+                                     sizes="(max-width: 600px) 100vw, 400px"
+                                     alt="" />
+                              </picture>
+                            {{- else -}}
+                              <img src="{{ $placeholder }}" alt="" />
+                            {{- end -}}
+                        </span>
+                        <h3>{{ .Params.title }}</h3>
+                        {{ with .Params.date }} <h4>{{ . | time.Format ":date_medium" }}</h4> {{ end }}
+                        {{ with .Params.summary }}<p>{{ . | plainify }}</p>{{ end }}
                     </a>
-                <h3>{{ .Params.title }}</h3>
-	        {{ with .Params.date }} <h4>{{ . | time.Format ":date_medium" }}</h4> {{ end }}
-                <p>{{ .Params.summary }}</p>
-                <ul class="actions">
-                    <li><a href="{{ .RelPermalink }}" class="button">More</a></li>
-                </ul>
             </article>
         {{ end }}
         </div>
