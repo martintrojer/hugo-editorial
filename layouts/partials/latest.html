@@ -13,19 +13,22 @@
         {{- $thumb1x := false -}}
         {{- $thumb2x := false -}}
         {{- if and $image (ge $image.Width $minW) (ge $image.Height $minH) -}}
-          {{- $thumb1x = $image.Fill (printf "%dx%d Smart q85" $w1 $h1) -}}
+          {{- $thumb1x = $image.Fill (printf "%dx%d Smart q85" $w1 $h1) | resources.Fingerprint -}}
           {{- if and (ge $image.Width $w2) (ge $image.Height $h2) -}}
-            {{- $thumb2x = $image.Fill (printf "%dx%d Smart q80" $w2 $h2) -}}
+            {{- $thumb2x = $image.Fill (printf "%dx%d Smart q80" $w2 $h2) | resources.Fingerprint -}}
           {{- end -}}
+        {{- end -}}
+        {{- if $image -}}
+          {{- $image = $image | resources.Fingerprint -}}
         {{- end -}}
         <article>
             <a href="{{ .link }}" class="card-link">
                 <span class="image">
                     {{- if $thumb1x -}}
-                      {{- $webp1x := $image.Fill (printf "%dx%d Smart webp q85" $w1 $h1) -}}
+                      {{- $webp1x := $image.Fill (printf "%dx%d Smart webp q85" $w1 $h1) | resources.Fingerprint -}}
                       {{- $webp2x := false -}}
                       {{- if $thumb2x -}}
-                        {{- $webp2x = $image.Fill (printf "%dx%d Smart webp q80" $w2 $h2) -}}
+                        {{- $webp2x = $image.Fill (printf "%dx%d Smart webp q80" $w2 $h2) | resources.Fingerprint -}}
                       {{- end -}}
                       <picture>
                         <source type="image/webp"

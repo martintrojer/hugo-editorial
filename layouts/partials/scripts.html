@@ -6,7 +6,7 @@
 {{ $respond := resources.Get "js/ie/respond.min.js" }}
 {{ $main := resources.Get "js/main.js" }}
 
-{{ $js := slice $jQuery $skel $util $main $html5shiv $respond | resources.Concat "js/bundle.js" | minify }}
+{{ $js := slice $jQuery $skel $util $main $html5shiv $respond | resources.Concat "js/bundle.js" | minify | resources.Fingerprint }}
 
 <!-- Scripts -->
-<script src='{{ $js.RelPermalink }}'></script>
+<script src='{{ $js.RelPermalink }}' integrity="{{ $js.Data.Integrity }}"></script>
