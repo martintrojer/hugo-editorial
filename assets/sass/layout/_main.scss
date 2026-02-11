@@ -48,10 +48,10 @@
 
 		@include breakpoint('<=small') {
 			> .inner {
-				@include padding(0, 2em);
+				@include padding(0, 1em);
 
 				> section {
-					@include padding(3em, 0);
+					@include padding(1.75em, 0);
 				}
 			}
 		}

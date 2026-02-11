@@ -6,7 +6,7 @@
     <div class="features">
         {{ range .feature }}
         <article>
-            <span class="icon {{ .icon }}"></span>
+            <span class="icon {{ if eq .icon_style "brands" }}fab brands{{ else }}fas solid{{ end }} {{ .icon }}"></span>
             <div class="content">
                 <h3>{{ .title }}</h3>
                 <p> {{ .content }}</p>
