@@ -6,8 +6,9 @@
             {{ with .subtitle }}<p class="major">{{ . | safeHTML }}</p>{{ end }}
         </header>
         {{ with .content }}<p>{{ . | safeHTML }}</p>{{ end }}
-        {{ with .button }}<ul class="actions">
-            <li><a href="{{ .link }}" class="button big">{{ .label }}</a></li>
+        {{ if or .button .button_secondary }}<ul class="actions">
+            {{ with .button }}<li><a href="{{ .link }}" class="button big primary">{{ .label }}</a></li>{{ end }}
+            {{ with .button_secondary }}<li><a href="{{ .link }}" class="button big">{{ .label }}</a></li>{{ end }}
         </ul>{{ end }}
     </div>
     {{ with .image }}<span class="image object">
