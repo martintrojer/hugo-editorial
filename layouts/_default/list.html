@@ -3,7 +3,7 @@
 <!-- Main -->
 <div id="main">
 	<div class="inner">
-		{{ partial "header" site.Data.header }}
+		{{ partial "header" hugo.Data.header }}
 		<section>
 
         <div class="posts">
@@ -23,6 +23,6 @@
 		</section>
 	</div>
 </div>
-{{ partial "sidebar" site.Data.sidebar }}
+{{ partial "sidebar" hugo.Data.sidebar }}
 
 {{ end }}

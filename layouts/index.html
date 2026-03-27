@@ -3,13 +3,13 @@
 <!-- Main -->
 <div id="main">
 	<div class="inner">
-		{{ partial "header" site.Data.header }}
-		{{ partial "banner" site.Data.banner }}
-		{{ partial "features" site.Data.features }}
-		{{ partial "latest" site.Data.latest }}
-		{{ partial "footer" site.Data.footer }}
+		{{ partial "header" hugo.Data.header }}
+		{{ partial "banner" hugo.Data.banner }}
+		{{ partial "features" hugo.Data.features }}
+		{{ partial "latest" hugo.Data.latest }}
+		{{ partial "footer" hugo.Data.footer }}
 	</div>
 </div>
-{{ partial "sidebar" site.Data.sidebar }}
+{{ partial "sidebar" hugo.Data.sidebar }}
 
 {{ end }}
